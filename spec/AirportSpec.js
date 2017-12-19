@@ -1,14 +1,16 @@
 describe("Airport", function() {
 
   var airport;
-  var plane = jasmine.createSpyObj('plane1', ['land']);
-  plane.land.and.callFake(function() {
-    return true;
-  })
+  var plane = jasmine.createSpyObj('plane1', ['land', 'takeoff']);
+  // plane.land.and.callFake(function() {
+  //   return true;
+  // });
+  // plane.takeoff.and.callFake(function() {
+  //   return true;
+  // });
 
   beforeEach(function() {
     airport = new Airport();
-    plane = new Plane();
   });
 
   it("the airport starts with no planes", function() {
@@ -18,6 +20,7 @@ describe("Airport", function() {
   describe("Landing", function() {
     it("can land a plane in the airport", function() {
       airport.land(plane)
+      plane.land
       expect(airport.landedPlanes.length).toEqual(1);
     });
   });
