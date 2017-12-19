@@ -6,7 +6,11 @@ describe("Plane", function() {
   });
 
   it("the plane is no long flying when landed by the airport", function (){
-    plane.land
+    plane.land()
+    expect(plane.flying).toBe(false);
+  });
+  it("the plane is flying after takeoff at the airport", function (){
+    plane.takeoff()
     expect(plane.flying).toBe(true);
   });
 });
