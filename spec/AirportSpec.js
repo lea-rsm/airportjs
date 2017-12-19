@@ -19,13 +19,12 @@ describe("Airport", function() {
 
   it("can instruct a plane to take off", function(){
     airport.land(plane)
-    airport.takeoff(plane)
+    airport.takeoff()
     expect(airport.landedPlanes.length).toEqual(0);
   });
 
   it("confirms that it is no longer in the airport", function(){
     airport.land(plane)
-    airport.takeoff(plane)
-    expect(message).toMatch(plane + "took off");
+    expect(airport.takeoff()).toEqual("the plane took off");
   });
 });
