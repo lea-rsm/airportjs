@@ -1,10 +1,10 @@
 function Plane() {
   this.flying = false
 }
-Plane.prototype.land = function() {
+Plane.prototype.isLanded = function() {
    this.flying = false
 }
 
-Plane.prototype.takeoff = function() {
+Plane.prototype.isFlying = function() {
   this.flying = true
 }
